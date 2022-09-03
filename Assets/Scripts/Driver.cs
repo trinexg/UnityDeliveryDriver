@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //SerializeField will allow us to edit the variable in Unity
+    [SerializeField] float steeringVelocity = 0.18f;
+    [SerializeField] float movementSpeed = 0.01f;
     void Start()
     {
         
@@ -13,7 +15,7 @@ public class Driver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0,0,0.25f);
-        transform.Translate(0,0.005f,0);
+        transform.Rotate(0,0,steeringVelocity);
+        transform.Translate(0,movementSpeed,0);
     }
 }
